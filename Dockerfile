@@ -1,6 +1,10 @@
-FROM golang:1.15 as builder
+FROM golang:1.18.0-alpine AS builder
+
+RUN apk add --no-cache git
 
 WORKDIR /app
+
+
 
 COPY . /app/
 RUN go build -o /gochallenge
